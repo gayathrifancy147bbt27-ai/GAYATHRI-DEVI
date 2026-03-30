@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h> // Required for strlen, though not strictly needed for this problem
+
+int main() {
+    char ch;
+    char s[100]; // Array to store the string
+    char sentence[100]; // Array to store the sentence
+
+    // Take character input
+    scanf("%c", &ch);
+
+    // Print the character
+    printf("%c\n", ch);
+
+    // Take string input
+    scanf("%s", s);
+
+    // Print the string
+    printf("%s\n", s);
+
+    // Consume the leftover newline character from the previous scanf("%s", s)
+    // This is crucial to prevent scanf("%[^\n]%*c", sentence) from reading an empty line
+    scanf("\n"); 
+
+    // Take sentence input (including spaces)
+    scanf("%[^\n]%*c", sentence);
+
+    // Print the sentence
+    printf("%s\n", sentence);
+
+    return 0;
+}
